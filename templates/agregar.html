@@ -1,0 +1,34 @@
+<!doctype html>
+<!-- Indica que el archivo está hecho con HTML5 -->
+
+<html>
+<head>
+    <title>Agregar alumno</title>
+    <!-- Título que aparece en la pestaña del navegador -->
+</head>
+
+<body>
+    <h1>Agregar alumno</h1>
+    <!-- Título principal que aparece en la parte superior de la página -->
+
+    <!-- Formulario para ingresar los datos de un nuevo alumno -->
+    <!-- La información se enviará a la ruta '/guardar' usando el método POST -->
+    <form action="/guardar" method="post">
+
+        <!-- Campo para escribir el nombre del nuevo alumno -->
+        Nombre: 
+        <input type="text" name="nombre"><br>
+
+        <!-- Campo para escribir el apellido del nuevo alumno -->
+        Apellido: 
+        <input type="text" name="apellido"><br>
+
+        <!-- Campo para ingresar la edad, solo acepta números -->
+        Edad: 
+        <input type="number" name="edad"><br>
+
+        <!-- Botón para enviar el formulario y guardar los datos -->
+        <input type="submit" value="Guardar">
+    </form>
+</body>
+</html>

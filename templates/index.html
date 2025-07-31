@@ -1,0 +1,51 @@
+<!doctype html>
+<!-- Esta línea indica que el documento es HTML5 -->
+
+<html>
+<head>
+    <title>Lista de alumnos</title>
+    <!-- Aquí va el título que aparece en la pestaña del navegador -->
+</head>
+
+<body>
+    <h1>Alumnos registrados</h1>
+    <!-- Título principal de la página -->
+
+    <a href="/agregar">Agregar un alumno</a>
+    <!-- Enlace que lleva al formulario para registrar un nuevo alumno -->
+
+    <table border="1">
+        <!-- Se crea una tabla con borde para mostrar los datos -->
+
+        <tr>
+            <!-- Fila de encabezados de la tabla -->
+            <th>ID</th>         <!-- Identificador del alumno -->
+            <th>Nombre</th>     <!-- Nombre del alumno -->
+            <th>Apellido</th>   <!-- Apellido del alumno -->
+            <th>Edad</th>       <!-- Edad del alumno -->
+            <th>Acciones</th>   <!-- Acciones disponibles: editar o eliminar -->
+        </tr>
+
+        {% for a in alumnos %}
+        <!-- Bucle que recorre la lista de alumnos que viene desde Flask -->
+
+        <tr>
+            <!-- Fila con los datos de un solo alumno -->
+
+            <td>{{ a[0] }}</td>  <!-- ID del alumno -->
+            <td>{{ a[1] }}</td>  <!-- Nombre del alumno -->
+            <td>{{ a[2] }}</td>  <!-- Apellido del alumno -->
+            <td>{{ a[3] }}</td>  <!-- Edad del alumno -->
+
+            <td>
+                <!-- Enlaces para editar o eliminar a ese alumno -->
+                <a href="/editar/{{ a[0] }}">Editar</a>
+                <a href="/eliminar/{{ a[0] }}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+        <!-- Fin del bucle -->
+    </table>
+</body>
+</html>
+

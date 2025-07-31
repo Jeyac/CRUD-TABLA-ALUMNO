@@ -1,0 +1,34 @@
+<!doctype html>
+<!-- Indica que este documento es HTML5 -->
+
+<html>
+<head>
+    <title>Editar alumno</title>
+    <!-- Título que aparecerá en la pestaña del navegador -->
+</head>
+
+<body>
+    <h1>Editar alumno</h1>
+    <!-- Título principal de la página -->
+
+    <!-- Formulario que envía los datos al servidor cuando se actualiza un alumno -->
+    <!-- El valor {{ alumno[0] }} es el ID del alumno que se va a actualizar -->
+    <form action="/actualizar/{{ alumno[0] }}" method="post">
+
+        <!-- Campo de texto para modificar el nombre del alumno -->
+        Nombre: 
+        <input type="text" name="nombre" value="{{ alumno[1] }}"><br>
+
+        <!-- Campo de texto para modificar el apellido del alumno -->
+        Apellido: 
+        <input type="text" name="apellido" value="{{ alumno[2] }}"><br>
+
+        <!-- Campo numérico para modificar la edad del alumno -->
+        Edad: 
+        <input type="number" name="edad" value="{{ alumno[3] }}"><br>
+
+        <!-- Botón para enviar el formulario y guardar los cambios -->
+        <input type="submit" value="Actualizar">
+    </form>
+</body>
+</html>
