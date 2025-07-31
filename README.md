@@ -1,4 +1,4 @@
-# CRUD de Alumnos con Flask y SQLite
+# CRUD de Alumnos con Flask
 
 Aplicación web sencilla para gestionar alumnos: agregar, listar, editar y eliminar (inactivar) registros.
 
