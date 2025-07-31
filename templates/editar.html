@@ -1,10 +1,44 @@
 <!doctype html>
-<!-- Indica que este documento es HTML5 -->
+<!-- Indica que este documento está escrito en HTML5 -->
 
 <html>
 <head>
     <title>Editar alumno</title>
     <!-- Título que aparecerá en la pestaña del navegador -->
+
+    <style>
+        /* Estilos básicos para la página */
+        body {
+            font-family: Arial, sans-serif; /* Tipo de letra más legible */
+            background-color: lightyellow;  /* Color de fondo suave */
+            color: black;                   /* Color de texto */
+            padding: 20px;                  /* Espaciado interno */
+        }
+
+        h1 {
+            color: darkblue;                /* Color del título principal */
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            padding: 5px;                   /* Espaciado interno del campo */
+            margin-bottom: 10px;            /* Espacio entre campos */
+            border: 1px solid gray;         /* Borde del campo */
+        }
+
+        input[type="submit"] {
+            background-color: lightgreen;   /* Color del botón */
+            color: black;                   /* Color del texto del botón */
+            padding: 5px 10px;              /* Espaciado del botón */
+            border: none;                   /* Sin borde */
+            cursor: pointer;                /* Cursor tipo mano */
+        }
+
+        input[type="submit"]:hover {
+            background-color: green;        /* Color cuando se pasa el mouse */
+            color: white;                   /* Texto blanco al pasar el mouse */
+        }
+    </style>
 </head>
 
 <body>
@@ -16,15 +50,15 @@
     <form action="/actualizar/{{ alumno[0] }}" method="post">
 
         <!-- Campo de texto para modificar el nombre del alumno -->
-        Nombre: 
+        <label>Nombre:</label><br>
         <input type="text" name="nombre" value="{{ alumno[1] }}"><br>
 
         <!-- Campo de texto para modificar el apellido del alumno -->
-        Apellido: 
+        <label>Apellido:</label><br>
         <input type="text" name="apellido" value="{{ alumno[2] }}"><br>
 
         <!-- Campo numérico para modificar la edad del alumno -->
-        Edad: 
+        <label>Edad:</label><br>
         <input type="number" name="edad" value="{{ alumno[3] }}"><br>
 
         <!-- Botón para enviar el formulario y guardar los cambios -->
